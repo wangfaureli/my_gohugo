@@ -1,0 +1,7 @@
+<h1>Layouts/events/list.html</h1>
+
+{{range ((where .Site.RegularPages "Section" "posts").ByParam "when").Reverse}}
+
+<a href="{{.Permalink}}">Nom de mon post: {{ .Params.title}}</a> <br/>
+
+{{ end }}

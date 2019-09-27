@@ -1,0 +1,61 @@
+<nav>
+    <ul class="menu">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <!-- <a href="/events">Events</a> -->
+            <div class="dropdown">
+                <button class="dropdown-toggle" type="button" id="dropdown-events"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Events
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdown-events">
+                    <!-- <button class="dropdown-item" type="button">All Events</button> -->
+                    <a class="dropdown-item" href="/events">All Events</a>
+                    <a class="dropdown-item" href="/events-upcoming">Upcoming Events</a>
+                    <a class="dropdown-item" href="/events-past">Past Events</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="/associations">Associations</a>
+        </li>
+        <li>
+            <a href="/municipal_council">Municipal Council</a>
+        </li>
+        <li>
+            <a href="/calendar">Calendar</a>
+        </li>
+       
+    </ul>
+    
+
+    
+    <!--<ul>                
+        {{range ((where .Site.RegularPages "Section" "posts").ByParam "when").Reverse}}
+        <li>
+            <a href="/posts">{{ .Title }}</a>
+        </li>
+        {{ end }}
+
+        {{ range (where .Site.RegularPages "Section" "events")}}
+
+        <li>
+            <a href="/events">{{ .Title }}</a>
+        </li>
+        {{ end }}
+
+        {{range ((where .Site.RegularPages "Section" "municipal_counicil").ByParam "when").Reverse}}
+        <li>
+            <a href="/municipal_council">{{ .Title }}</a>
+        </li>
+        {{ end }}
+
+        {{range ((where .Site.RegularPages "Section" "associations").ByParam "when").Reverse}}
+        <li>
+            <a href="/associations">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ul>-->
+</nav>

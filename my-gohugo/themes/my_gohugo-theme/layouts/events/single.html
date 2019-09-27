@@ -1,0 +1,22 @@
+{{/*  <!DOCTYPE html>
+<html>
+<head>
+    <title>Page Simple</title>
+</head>
+<body>  */}}
+    {{ partial "head.html" . }}
+    <h1 class="event-container">{{ .Title }}</h1>
+        <h4 class="event-container">{{ dateFormat "02 January 2006" .Params.When }}</h4>
+        <div class="event-container">
+            <p>{{ .Content }}</p>
+            <img src="{{ .Params.photos }}" width="auto" height="350px" />
+            <h3>
+            <div class="adress">{{ .Params.address }} {{ .Params.postalCode}} {{ .Params.city }}</div>
+            <div class="description">{{ .Params.description }}</div>
+            <div class="label">{{ .Params.label}}</div>
+            
+            </h3>
+        </div>   
+{{/*  </body>  */}}
+{{ partial "footer.html" . }}
+{{/*  </html>  */}}

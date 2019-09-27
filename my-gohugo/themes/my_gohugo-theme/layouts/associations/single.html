@@ -1,0 +1,34 @@
+
+    {{ partial "head.html" . }}
+    <h1 class="event-container">{{ .Title }}</h1>
+        <div class="event-container">
+            <h3>{{ .Params.domain }}</h3>
+            <p>{{ .Content }}</p>
+            <img src="{{ .Params.photo }}" width="auto" height="450px" />
+            {{ $titreAsso := .Params.Title }}
+            
+            <br />
+            <br />
+            <br />
+            <h3>Our events :</h3>
+            {{range (where .Site.RegularPages "Section" "events")}}
+                {{ if eq (.Params.association) ($titreAsso) }}
+                <div>
+                    <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+                    <div><img src="{{ .Params.photos }}" width="auto" height="250px" /></div>
+                </div>
+
+                {{ end }} 
+            {{ end }}
+                    {{/*  - if   */}}
+                        {{/*  -> afficher   -->  */}}
+            
+        </div>
+   
+
+            
+{{/*  <a href="/">Home</a>  */}}
+
+{{ partial "footer.html" . }}
+
+
