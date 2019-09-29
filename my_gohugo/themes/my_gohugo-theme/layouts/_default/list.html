@@ -1,0 +1,17 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Page Liste</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body> -->
+    <h1 class="liste">All my posts</h1>
+    {{ partial "nav" . }}
+    {{ .Content }}
+    <ul>
+        {{ range .Pages }}
+        <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+<!-- </body>
+</html> -->

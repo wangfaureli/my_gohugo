@@ -1,0 +1,7 @@
+{{ partial "head.html" . }}
+<h1 class="liste">Past Events</h1>
+
+{{ .Scratch.Set "typeEvent" "archived" }}
+{{ partialCached "events" . "archived" }}
+
+{{ partial "footer.html" . }}

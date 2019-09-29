@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(145, 92, 28);
+}
+
+.liste {
+    color: lightcoral; 
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    margin: 20px;
+}
+header {
+    background-color: palevioletred;
+}
+
+/* sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: burlywood;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.sideba a {
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+}
+/* end of sidebar */
+
+
+h1.home {
+    color: burlywood; 
+    font-size: 30spx;
+    text-decoration: none;
+    margin: 0;
+    padding: 10px;
+}
+.search-form {
+    text-align: right;
+    padding: 10px;
+}
+
+ul.menu {
+    background-color: gray;
+    margin: 0;
+}
+
+ul.menu > li {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 10px;
+    font-size: 18px;
+}
+ul.menu > li:hover {
+    background-color: #969696;
+}
+ul.menu > li a {
+    color: black;
+    text-decoration: none;
+}
+ul.menu > li .dropdown button#dropdown-events {
+    background-color: transparent;
+    border: none;
+}
+
+ul.menu > li .dropdown button#dropdown-events:focus {
+    outline: 0;
+}
+
+.phone-container {
+    margin: 20px 0;
+    text-align: center;
+}
+.phone-container .phone-title {
+    font-size: 20px;
+}
+
+#map {
+    height: 200px;
+}
+
+form.contact-form {
+    text-align: center;
+}
+form.contact-form input[type=text],
+form.contact-form input[type=email],
+form.contact-form textarea {
+    padding: 8px 13px;
+    font-size: 17px;
+    border-radius: 20px;
+    border: 1px solid #808080;
+}
+
+.event-container {
+    text-align: center;
+    margin: 20px 10px;
+}
+
+.council-container {
+    text-align: center;
+    margin: 30px 20PX;
+}
+
+.adress {
+    margin: 20px;
+    color: darkslateblue;
+    font-size: 20px;
+}
+
+.description {
+    margin: 20px;
+    color: orange;
+    font-size: 35px;
+}
+
+.center {
+    display: block;
+    text-align: center;
+    margin: 30px;
+}
+
+.calendar {
+    text-align: center;
+}
+
+div.association-container a {
+    margin: 10px 25px;
+}
+
+button.hide-event.collapsed {
+    display: none;
+}
+button.show-event:not(.collapsed) {
+    display: none;
+}

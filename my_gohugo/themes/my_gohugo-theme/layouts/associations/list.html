@@ -1,0 +1,9 @@
+{{ partial "head.html" . }}
+<h1 class="liste">Associations</h1>
+
+<div class="association-container center">
+    {{range (where .Site.RegularPages "Section" "associations")}}
+        <a href="{{.Permalink}}"> {{ .Params.title}} | {{ .Params.domain }}</a>
+    {{ end }}
+</div>
+{{ partial "footer.html" . }}

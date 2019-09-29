@@ -1,0 +1,66 @@
+
+    {{ partial "head.html" . }}
+    <h1 class="event-container">{{ .Title }}</h1>
+    <div class="event-container">
+        <h3>{{ .Params.domain }}</h3>
+        <p>{{ .Content }}</p>
+        <img src="{{ .Params.photo }}" width="auto" height="450px" />
+        {{ $titreAsso := .Params.Title }}
+        
+        <br />
+        <br />
+        <br />
+        <h3>Our events :</h3>
+        {{range (where .Site.RegularPages "Section" "events")}}
+            {{ if eq (.Params.association) ($titreAsso) }}
+                {{ if ge (dateFormat "2006-01-02" .Params.When) (dateFormat "2006-01-02" now) }}
+                <div>
+                    {{ $permalink := .Permalink }}
+                    <div><a href="{{ .Permalink }}">{{ .Params.title }}</a></div>
+                    {{ range .Params.photos }}
+                        <img src="{{ . }}" width="auto" height="200px">
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{ end }} 
+        {{ end }}
+        <br />
+        <div class="accordion" id="past-events-container">
+            <div class="card">
+                <div class="card-header" id="past-events-header">
+                    <h2>
+                        <button class="btn btn-link show-event collapsed" type="button" data-toggle="collapse" data-target="#past-events-body"
+                            aria-controls="past-events-body">
+                            Show Past Events
+                        </button>
+                        <button class="btn btn-link hide-event collapsed" type="button" data-toggle="collapse" data-target="#past-events-body"
+                            aria-controls="past-events-body">
+                            Hide Past Events
+                        </button>
+                    </h2>
+                </div>
+                <div id="past-events-body" class="collapse" aria-labelledby="past-events-header" data-parent="#past-events-container">
+                    <div class="card-body">
+                        {{ range (where .Site.RegularPages "Section" "events") }}
+                            {{ if eq (.Params.association) ($titreAsso) }}
+                                {{ if lt (dateFormat "2006-01-02" .Params.When) (dateFormat "2006-01-02" now) }}
+                                <div>
+                                    {{ $permalink := .Permalink }}
+                                    <div><a href="{{ .Permalink }}">{{ .Params.title }}</a></div>
+                                    {{ range .Params.photos }}
+                                        <img src="{{ . }}" width="auto" height="200px">
+                                    {{ end }}
+                                </div>
+                                {{ end }}
+                            {{ end }} 
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+{{ partial "footer.html" . }}
+
+

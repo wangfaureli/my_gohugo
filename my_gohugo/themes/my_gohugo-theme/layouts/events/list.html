@@ -1,0 +1,7 @@
+{{ partial "head.html" . }}
+<h1 class="liste">All Events</h1>
+
+{{ .Scratch.Set "typeEvent" "events"}}
+{{ partialCached "events" . "events"}}
+
+{{ partial "footer.html" . }}
