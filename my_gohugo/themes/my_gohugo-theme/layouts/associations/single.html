@@ -45,7 +45,6 @@
                             {{ if eq (.Params.association) ($titreAsso) }}
                                 {{ if lt (dateFormat "2006-01-02" .Params.When) (dateFormat "2006-01-02" now) }}
                                 <div>
-                                    {{ $permalink := .Permalink }}
                                     <div><a href="{{ .Permalink }}">{{ .Params.title }}</a></div>
                                     {{ range .Params.photos }}
                                         <img src="{{ . }}" width="auto" height="200px">

@@ -1,6 +1,7 @@
-{{range (where .Site.RegularPages "Section" "presentation")}}
+{{ range (where .Site.RegularPages "Section" "presentation") }}
 <div class="center">
     <p>{{ .Content }}</p>
-    <a href="{{.Permalink}}"> <img src="{{ .Params.photo}}" width="auto" height="400px"></a> <br/>
+    <img src="{{ .Params.photo}}" width="auto" height="400px">
+    <br/>
 </div>
-{{end}}
+{{ end }}

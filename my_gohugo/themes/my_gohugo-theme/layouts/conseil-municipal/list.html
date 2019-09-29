@@ -6,9 +6,10 @@
 
 {{range ((where .Site.RegularPages "Section" "conseil-municipal").ByParam "when").Reverse }}
     <div class="council-container">
-        <a href="{{.Permalink}}"> {{ .Params.firstName}}  {{ .Params.lastName }}</a> <br/>
-        <div>  {{ .Params.role }}</div>
-        <a href="{{.Permalink}}"> <img src="{{ .Params.photo }}" width="auto" height="400px"></a> <br/>
+        <div>{{ .Params.firstName}}  {{ .Params.lastName }}</div>
+        <div>{{ .Params.role }}</div>
+        <img src="{{ .Params.photo }}" width="auto" height="400px">
+        <br/>
     </div>
 {{ end }}
 {{ partial "footer.html" . }}
